@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main id="app">
+        <section id="presentacion" class="Presentacion-Casa ">
+            <!-- <img class="h-100 w-100" src="https://i.pinimg.com/originals/a5/4b/be/a54bbeb4e1b46a72ae9c4515e9b606cc.jpg" > -->          
+            <img id="brujo" class="brujo animate__animated animate__zoomInUp animate__delay-2s" src="https://2962208038-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-Mi4gdPo9mwmUqTTnNcp%2F-MiahBhFSjG_4K5dY90l%2F-Miahu3iY_Db2UkkFMri%2Favatar-complete-warlock.png?alt=media&token=7419dbd9-9dba-4725-b2ad-08640695d38f" alt="">
+            <button  @click="cambiartexto()" class="Texto  animate__animated animate__fadeInLeft animate__delay-4s">
+                <h2 id="texto1" class="animate__animated animate__fadeInLeft animate__delay-5s fw-boleder"> Bienvenido pequeño! ...</h2>
+                <h2 id="texto2" class="animate__animated animate__fadeInLeft  fw-boleder">Soy el guia de esta casa, ¿estas preparado para los misterios? ...</h2>
+                <h2 id="texto3" class="animate__animated animate__fadeInLeft  fw-boleder"> adelante prueba suerte, si logras vencer todos los desafios, obtendras todo mi poder! ...</h2>
+                <h2 id="texto4" class="animate__animated animate__fadeInLeft  fw-boleder"> Asi que no perdamos el tiempo y entremos.</h2>
+                <h4 class="tocar">Tocar para continuar</h4>
+            </button>
+        </section>
+        <section id="puertas" class="puertas">
+            <article id="puerta1" class="puerta1 mostrarPuerta">
+               <div><h3 class="text-white">Elige una puerta</h3></div>
+                 <div class="d-flex flex-column ">                    
+                    <button  @click="puertaSeleccionada(1)"  class="botonEntrar">Memoria</button>
+                </div>                
+                 <button  @click="siguientePuerta(1,2)"  class="seleccionarPuerta ">Siguiente puerta</button>               
+            </article>
+            <article id="puerta2" class="puerta2">
+                <button @click="puertaAnterior(2,1)" class="seleccionarPuerta">Puerta anterior</button>
+                <div class="d-flex flex-column ">                   
+                   <button   @click="puertaSeleccionada(2)" class="botonEntrar">Preguntas</button>
+               </div>
+               <button  @click="siguientePuerta(2,3)"  class="seleccionarPuerta">Siguiente puerta</button>
+  
+               
+            </article>
+            <article id="puerta3"  class="puerta3">
+                <button  @click="puertaAnterior(3,2)" class="seleccionarPuerta">Siguiente puerta</button>
+                <div class="d-flex flex-column ">
+                   <button @click="puertaSeleccionada(3)" class="botonEntrar" >Crimen</button>
+               </div>
+                <button  @click="siguientePuerta(3,4)" class="seleccionarPuerta">Puerta anterior</button>
+               
+            </article>
+            <article id="puerta4" class="puerta4">
+                <button  @click="puertaAnterior(4,3)" class="seleccionarPuerta">Puerta anterior</button>
+                <div class="d-flex flex-column ">
+                   <button @click="puertaSeleccionada(4)" class="botonEntrar" >Entrar</button>
+               </div>
+               <div><h3 class="text-white">Elige una puerta</h3></div>
+               
+               
+            </article>
+        </section>
+
+        <section id="juegoMemoria" class="juegoMemoria">
+            <div class="contenedorJuegoMemoria">
+               <button  class="botonmemoria" @click="darVueltaMemoria(1,1)"><div id="memoria1" class="memoria-parte"><img src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""></div><h3  id="numero1" aria-valuetext="2" class="memoria-parte">2</h3></button>
+               <button  class="botonmemoria" @click="darVueltaMemoria(2,2)"><div id="memoria2" class="memoria-parte"> <img  src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""> </div> <h3  id="numero2" aria-valuetext="40" class="memoria-parte">40</h3></button>
+               <button  class="botonmemoria" @click="darVueltaMemoria(3,3)"><div id="memoria3" class="memoria-parte"> <img  src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""> </div> <h3  id="numero3"aria-valuetext="2" class="memoria-parte">12 -10</h3></button>
+               <button  class="botonmemoria" @click="darVueltaMemoria(4,4)"><div id="memoria4" class="memoria-parte"> <img  src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""> </div> <h3  id="numero4" aria-valuetext="4" class="memoria-parte">2 + 2</h3></button>
+               <button  class="botonmemoria" @click="darVueltaMemoria(5,5)"><div id="memoria5" class="memoria-parte"> <img  src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""> </div> <h3  id="numero5" aria-valuetext="33" class="memoria-parte">16 + 17</h3></button>
+               <button  class="botonmemoria" @click="darVueltaMemoria(6,6)"><div id="memoria6" class="memoria-parte"> <img  src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""> </div><h3 id="numero6" aria-valuetext="4" class="memoria-parte">4</h3></button>
+               <button  class="botonmemoria" @click="darVueltaMemoria(7,7)"><div id="memoria7" class="memoria-parte"> <img  src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""> </div> <h3  id="numero7" aria-valuetext="6" class="memoria-parte">6</h3></button>
+               <button  class="botonmemoria" @click="darVueltaMemoria(8,8)"><div id="memoria8" class="memoria-parte"> <img  src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""> </div><h3  id="numero8" aria-valuetext="20" class="memoria-parte">20</h3></button>
+               <button  class="botonmemoria" @click="darVueltaMemoria(9,9)"><div id="memoria9" class="memoria-parte"> <img  src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""> </div> <h3 id="numero9" aria-valuetext="40" class="memoria-parte">23 +17</h3></button>
+               <button  class="botonmemoria" @click="darVueltaMemoria(10,10)"><div id="memoria10" class="memoria-parte"> <img  src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""> </div> <h3  id="numero10" aria-valuetext="20" class="memoria-parte">50 - 30</h3></button>
+               <button  class="botonmemoria" @click="darVueltaMemoria(11,11)"><div id="memoria11" class="memoria-parte"> <img  src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""> </div> <h3 id="numero11" aria-valuetext="6" class="memoria-parte">3 + 3</h3></button>
+               <button  class="botonmemoria" @click="darVueltaMemoria(12,12)"><div id="memoria12" class="memoria-parte"> <img  src="https://as1.ftcdn.net/v2/jpg/00/66/80/14/1000_F_66801430_bA1nNPiHuYMJ1MhU0kVYSXjJdztPDj4e.jpg" alt=""> </div> <h3  id="numero12" aria-valuetext="33" class="memoria-parte">33</h3></button>              
+            </div>
+            
+
+        </section>
+        <section id="juegoPregunta" class="juegoPregunta">
+        <div class="contenedorJuegoPregunta">
+            <article id="articulo1">
+                <div class="pregunta"><h3>{{arrayDePregunta[0].pregunta}} </h3></div> 
+                <div class="respuesta">
+                <button id="botonPregunta1"  @click="respuesta(1, arrayDePregunta[0].resultado)" >{{arrayDePregunta[0].respuesta1}}</button>
+                <button id="botonPregunta2" @click="respuesta(2 , arrayDePregunta[0].resultado)" >{{arrayDePregunta[0].respuesta2}}</button>
+                <button id="botonPregunta3"  @click="respuesta(3 , arrayDePregunta[0].resultado)" >{{arrayDePregunta[0].respuesta3}}</button>
+                <button id="botonPregunta4" @click="respuesta(4 , arrayDePregunta[0].resultado)" >{{arrayDePregunta[0].respuesta4}}</button>
+              </div>
+              <h4 v-if="correcto==false" class="text-danger ">Esa no es la respuesta correcta</h4>
+              <div v-if="correcto==true" class="siguientePregunta">
+                  <h2 >Correcto</h2>
+                <button @click="cambiarPregunta()"> Siguiente pregunta</button>
+             </div>
+            </article>
+         
+        </div>
+
+        </section>
+      
+        <section  id="juegoCrimen" class="juegoCrimen">
+            <div class="contenedorJuegoCrimen">
+                <div   class="contenedorObjetosCrimen" id="contenedorObjetosCrimen1">
+                    <button @click="cambiarImagenCrimen(5)">
+                        <img id="imagenJuegoCrimen5" src="https://cdn.pixabay.com/photo/2017/09/17/02/02/png-2757379__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(10)">
+                     <img id="imagenJuegoCrimen10" src="https://cdn.pixabay.com/photo/2017/09/01/00/16/png-2702697__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(12)">
+
+                        <img id="imagenJuegoCrimen12" src="https://cdn.pixabay.com/photo/2017/08/09/17/20/bible-2615221__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(20)">
+
+                        <img id="imagenJuegoCrimen20" src="https://cdn.pixabay.com/photo/2017/08/18/00/28/png-2653383__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(15)">
+
+                        <img id="imagenJuegoCrimen15" src="https://cdn.pixabay.com/photo/2017/09/29/15/41/wolf-2799472__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(17)">
+
+                        <img id="imagenJuegoCrimen17" src="https://cdn.pixabay.com/photo/2017/07/29/18/42/wooden-box-2552370__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(3)">
+
+                        <img id="imagenJuegoCrimen3" src="https://cdn.pixabay.com/photo/2017/02/02/16/35/box-2033183__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(24)">
+
+                        <img id="imagenJuegoCrimen24" src="https://cdn.pixabay.com/photo/2016/04/11/23/14/ladybug-1323385__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(18)">
+
+                        <img id="imagenJuegoCrimen18" src="https://cdn.pixabay.com/photo/2016/11/25/07/00/diamond-1857733__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(9)">
+
+                        <img id="imagenJuegoCrimen9" src="https://cdn.pixabay.com/photo/2018/02/14/02/40/bulb-3152008__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(25)">
+
+                        <img id="imagenJuegoCrimen25" src="https://cdn.pixabay.com/photo/2017/09/28/14/53/figure-2795794__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(7)">
+
+                        <img id="imagenJuegoCrimen7" src="https://cdn.pixabay.com/photo/2016/12/14/01/20/balloon-1905476__340.png" alt="">
+                    </button>
+
+                </div>
+                <div  class="contenedorObjetosCrimen"  id="contenedorObjetosCrimen2">
+                    <button @click="cambiarImagenCrimen(6)">
+
+                        <img id="imagenJuegoCrimen6" src="https://cdn.pixabay.com/photo/2019/02/09/15/28/wolf-3985358__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(1)">
+
+                        <img id="imagenJuegoCrimen1" src="https://cdn.pixabay.com/photo/2018/04/05/00/43/taco-3291599__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(27)">
+
+                        <img id="imagenJuegoCrimen27" src="https://cdn.pixabay.com/photo/2015/12/12/08/50/polar-1089266__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(8)">
+
+                        <img id="imagenJuegoCrimen8" src="https://cdn.pixabay.com/photo/2015/11/18/19/43/elephant-1049839__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(30)">
+
+                        <img id="imagenJuegoCrimen30" src="https://cdn.pixabay.com/photo/2018/11/12/19/50/women-3811605__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(26)">
+
+                        <img id="imagenJuegoCrimen26" src="https://cdn.pixabay.com/photo/2018/06/03/01/15/fish-3449604__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(14)">
+
+                        <img id="imagenJuegoCrimen14" src="https://cdn.pixabay.com/photo/2017/09/14/12/55/png-2748930__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(19)">
+
+                        <img id="imagenJuegoCrimen19" src="https://cdn.pixabay.com/photo/2017/08/02/08/52/png-2570357__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(22)">
+                        <img id="imagenJuegoCrimen22" src="https://cdn.pixabay.com/photo/2020/11/16/17/58/tyrannosaur-5749813__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(4)">
+
+                        <img id="imagenJuegoCrimen4" src="https://cdn.pixabay.com/photo/2017/01/23/20/27/compote-2003766__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(29)"> 
+                        <img id="imagenJuegoCrimen29" src="https://cdn.pixabay.com/photo/2017/05/17/11/20/table-lamp-2320604__340.png" alt="">
+                    </button>
+                    
+                    <button @click="cambiarImagenCrimen(13)">
+                        <img id="imagenJuegoCrimen13" src="https://cdn.pixabay.com/photo/2017/08/03/11/01/plaster-2575589__340.png" alt="">
+                    </button>
+
+
+                </div>
+                <div  class="contenedorObjetosCrimen"  id="contenedorObjetosCrimen3">
+                    <button @click="cambiarImagenCrimen(21)">
+
+                        <img id="imagenJuegoCrimen21" src="https://cdn.pixabay.com/photo/2017/03/01/18/10/vector-graphic-2109238__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(16)">
+
+                        <img id="imagenJuegoCrimen16" src="https://cdn.pixabay.com/photo/2017/05/31/09/48/the-mortar-2359766__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(28)">
+
+                        <img id="imagenJuegoCrimen28" src="https://cdn.pixabay.com/photo/2016/01/22/21/10/dollar-1156662__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(23)">
+
+                        <img id="imagenJuegoCrimen23" src="https://cdn.pixabay.com/photo/2015/09/13/01/18/emoticon-937602__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(11)">
+
+                        <img id="imagenJuegoCrimen11" src="https://cdn.pixabay.com/photo/2016/12/08/11/50/time-1891565__340.png" alt="">
+                    </button>
+                    <button @click="cambiarImagenCrimen(2)">
+
+                        <img id="imagenJuegoCrimen2" src="https://cdn.pixabay.com/photo/2017/09/10/00/28/png-2734003__340.png" alt="">
+                    </button>
+                    <div class="contenedorObjetoBuscado" id="contenedorObjetoBuscado">
+                        <h3 class="text-white">Encuentra el siguiente Objeto </h3>
+                        <img id="imagenJuegoCrimenBuscada" src="https://cdn.pixabay.com/photo/2018/04/05/00/43/taco-3291599__340.png" alt="">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="./js.js"></script>
+</body>
+</body>
+</html>

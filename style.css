@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Permanent Marker', cursive;
+   /*  border: solid .1rem red; */
+}
+main{
+    height: 100vh;
+}
+.Presentacion-Casa{
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://i.pinimg.com/736x/43/29/83/4329832ff2c5b2723d280518a06b346a--haunted-castles-haunted-mansion.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+.brujo{
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    height: 500px;
+    width: 300px;
+}
+
+.Texto{
+    width: 90%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+ /*    background-image: url("https://img.freepik.com/vector-gratis/fondo-telarana-halloween-realista_23-2149090361.jpg"); */
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwUxa3hh58IET5F_NTWXpdrvxo0y0YBSKx2lvwt0owWZy-8sflwH6klkEw-k8OXtUTaLg&usqp=CAU");
+    background-size: cover;
+    background-position: center -5rem;
+    border: solid white .3rem;
+    border-radius: 4rem;
+}
+.Texto h2{
+    -webkit-text-stroke: .1rem white;
+    font-size: 3rem;
+    color: black;
+}
+#texto2{
+    display: none;
+}
+#texto3{
+    display: none;
+}
+#texto4{
+    display: none;
+}
+.tocar{
+    position: absolute;
+    bottom: 2px;
+    right:40px;
+}
+.sacarSeccion{
+    display: none !important;
+}
+/* Puertas */
+.puertas{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: none;
+
+}
+.seleccionarPuerta{
+    padding: 5px;
+}
+.puerta1{
+    height: 100%;
+    width: 100%;
+    background-image: url("https://media.revistagq.com/photos/5d494b9a6b1ecf0008a51b2b/3:2/w_2046,h_1364,c_limit/terror.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    display:none ;   
+    flex-direction: row !important;
+    justify-content: space-around !important;
+}
+.puerta2{
+    height: 100%;
+    width: 100%;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtjo2cgZ-h76167pIX-xSb_-XRbmDZJlaohw&usqp=CAU");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    display:none;   
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    
+}
+.puerta3{
+    height: 100%;
+    width: 100%;
+    background-image: url("https://i.ytimg.com/vi/6Dy8iCBUjuY/maxresdefault.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    display:none;   
+    flex-direction: row !important;
+    justify-content: space-around !important;
+  
+}
+.puerta4{
+    height: 100%;
+    width: 100%;
+    background-image: url("https://image.api.playstation.com/vulcan/img/rnd/202011/1810/qfIEIMqMSJym9UVmPcurqaQ7.png?w=1024");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    display:none;   
+    flex-direction: row !important;
+    justify-content: space-around !important;
+  
+}
+.botonEntrar{
+    padding: 5px;
+    font-size: 2rem;
+    border-radius: 1rem;
+  
+}
+.botonEntrar:hover{
+    color: chocolate;
+    background-color: black;
+}
+
+
+.mostrarPuerta{
+    display:flex !important;
+}
+/* JUEGO MEMORIA */
+.juegoMemoria{
+    height: 100vh;
+    width: 100%;
+    display: none;
+    background-image: url("https://img.freepik.com/fotos-premium/diseno-interior-habitacion-vacia-terror-dano-espeluznante-representacion-3d_307211-424.jpg?w=2000");
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+.contenedorJuegoMemoria{
+    width: 50%;
+    height: 70vh;
+    background-image: url("https://images.alphacoders.com/747/747026.png");
+    background-size: cover;
+    border-radius: 3rem;
+    border: solid white .3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center
+}
+.contenedorJuegoMemoria button{
+    width: 200px ;
+    height: 150px;
+    border-radius: 3rem;
+    border: solid .1rem white;
+    background-position: center;
+    background-size: cover;
+    background: transparent;
+  
+
+}
+.memoria-parte{
+    display: inline-block;
+    width: 200px;
+    height: 165px;
+    z-index: 10;  
+    
+}
+.contenedorJuegoMemoria button img{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 3rem;
+    
+}
+.contenedorJuegoMemoria button h3{ 
+    color: black;
+    font-size: 3rem;
+    border-radius: 3rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    animation: aparecer .3s ;
+   
+    
+}
+ .aparecer{
+    display: flex !important;
+   
+
+}
+.desaparecer{
+  
+   
+    animation: desaparecer .3s;
+    display: none;
+    
+} 
+@keyframes aparecer {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+/* Juego Pregunta */
+.juegoPregunta{
+    height: 100vh;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://img.freepik.com/fotos-premium/aula-terror-espeluznante-escuela_307211-146.jpg?w=2000");
+    background-size: cover;
+}
+.contenedorJuegoPregunta{
+    height: 70vh;
+    width: 50%;
+    background-image: url("https://st.depositphotos.com/1014889/1273/i/450/depositphotos_12738926-stock-photo-halloween-design-forest-pumpkins.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+    border: solid white .3rem;
+    color: white;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+}
+.pregunta{
+    display: flex;
+    width: 80%;
+    text-align: center;  
+}
+.respuesta{
+ display: flex;
+ gap: 1rem;
+ width: 80%;
+ justify-content: center;
+ height: 5vh;
+ margin-top: 2rem;
+}
+.respuesta button{
+width: 20%;
+background-color: chocolate;
+border-radius: 1rem;
+border: solid .2rem black;
+}
+.respuesta button:hover{
+    background-color: black;
+    border: solid .2rem chocolate;
+    color: chocolate;
+}
+.siguientePregunta{
+    height: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.siguientePregunta button{
+ border-radius: 1rem;
+ background-color: chocolate;
+ padding: 5px;
+}
+.siguientePregunta button:hover{
+    background-color: black;
+    border: solid .2rem chocolate;
+    color: chocolate;
+}
+.siguientePregunta h2{
+    color: rgb(0, 255, 0);
+}
+/* Juego Crimen */
+
+.juegoCrimen{
+    display: none;
+    height: 100vh;
+    width: 100%;    
+    justify-content: center;
+    align-items: center;
+    background-image: url("./assets/peakpx.jpg");
+    background-size: cover;
+}
+.contenedorJuegoCrimen{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+.contenedorObjetosCrimen{
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.contenedorObjetosCrimen button{
+    width: 33%;
+    height: 25%;
+    background-color: transparent;
+    border: none;
+}
+.contenedorObjetosCrimen img{
+    width: 100%;
+    height: 100%;
+}
+.contenedorObjetoBuscado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+}
+.contenedorObjetoBuscado img{
+height: 90%;;
+}
